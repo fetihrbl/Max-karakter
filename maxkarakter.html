@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>FATİH EMİN ERBİL</title>
+</head>
+
+<body>
+<textarea id="alan" style="width: 500px; height: 250px;" onkeypress="ornek()"></textarea>
+<br/>
+<div>Kullanılan Karakter sayısı : <span id="kullanilankarakter">0</span></div>
+<div>Kalan Karakter Sayısı : <span id="kalankarakter">10</span></div>
+
+<script type="text/javascript" language="javascript">
+var kullanilan         =   0;
+var maksimun           =   9;
+
+function ornek(){
+    baglan          =   document.getElementById("alan");
+    var uzunluk     =   baglan.value.length;
+    if(uzunluk>=maksimun){
+        var deger   =   baglan.value;
+        var olustur =   deger.substr(0,9);
+        document.getElementById("alan").value    = olustur;
+        document.getElementById("kullanilankarakter").innerHTML = 10;
+        document.getElementById("kalankarakter").innerHTML      = 0;
+    }else{
+        var deger   =   baglan.value;
+        var olustur =   deger.substr(0,9);
+        document.getElementById("alan").value   = olustur;
+        document.getElementById("kullanilankarakter").innerHTML     = uzunluk + 1;
+        document.getElementById("kalankarakter").innerHTML          = (maksimun + 1) - (uzunluk + 1);
+    }
+
+
+
+    
+    
+
+}
+
+
+
+</script>
+</body>
+</html>
